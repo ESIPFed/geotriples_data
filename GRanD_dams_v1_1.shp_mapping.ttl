@@ -1,0 +1,496 @@
+@prefix geof: <http://www.opengis.net/def/function/geosparql/>.
+@prefix map: <#>.
+@prefix ogc: <http://www.opengis.net/ont/geosparql#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rrx: <http://www.w3.org/ns/r2rml-ext#>.
+@prefix rrxf: <http://www.w3.org/ns/r2rml-ext/functions/def/>.
+@prefix strdf: <http://strdf.di.uoa.gr/ontology#>.
+@prefix vocab: <ontology#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+map:GRanD_dams_v1_1_geometry
+    rr:logicalTable [ rr:tableName "`GRanD_dams_v1_1`"; ];
+    rr:subjectMap [ rr:class ogc:Geometry; rr:template "http://esipfed.org/geotriples/GRanD_dams_v1_1/Geometry/{`gid`}"; ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:dimension;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rrx:function rrxf:dimension;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:isSimple;
+        rr:objectMap [
+            rr:datatype xsd:boolean;
+            rrx:function rrxf:isSimple;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:coordinateDimension;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rrx:function rrxf:coordinateDimension;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:is3D;
+        rr:objectMap [
+            rr:datatype xsd:boolean;
+            rrx:function rrxf:is3D;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:spatialDimension;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rrx:function rrxf:spatialDimension;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:asWKT;
+        rr:objectMap [
+            rr:datatype ogc:wktLiteral;
+            rrx:function rrxf:asWKT;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:isEmpty;
+        rr:objectMap [
+            rr:datatype xsd:boolean;
+            rrx:function rrxf:isEmpty;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    .
+map:GRanD_dams_v1_1
+    rr:logicalTable [ rr:tableName "`GRanD_dams_v1_1`"; ];
+    rr:subjectMap [ rr:class vocab:GRanD_dams_v1_1; rr:template "http://esipfed.org/geotriples/GRanD_dams_v1_1/id/{`gid`}"; ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_AREA_MAX;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`AREA_MAX`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_ELEV_MASL;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rr:column "`ELEV_MASL`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_SUB_BASIN;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`SUB_BASIN`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_DAM_HGT_M;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rr:column "`DAM_HGT_M`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_CAP_MCM;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`CAP_MCM`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_GRAND_ID;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rr:column "`GRAND_ID`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_ALT_CITY;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`ALT_CITY`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_ADMIN_UNIT;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`ADMIN_UNIT`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_ALT_LEN_M;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rr:column "`ALT_LEN_M`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_CAP_MIN;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`CAP_MIN`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_ALT_NAME;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`ALT_NAME`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_USE_ELEC;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`USE_ELEC`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_CAP_MAX;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`CAP_MAX`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_DATA_INFO;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`DATA_INFO`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_LAKE_CTRL;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`LAKE_CTRL`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_MAIN_BASIN;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`MAIN_BASIN`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_DEPTH_M;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`DEPTH_M`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_TIMELINE;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`TIMELINE`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_RIVER;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`RIVER`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_USE_SUPP;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`USE_SUPP`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_USE_RECR;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`USE_RECR`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_SEC_CNTRY;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`SEC_CNTRY`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_AREA_REP;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`AREA_REP`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:hasGeometry;
+        rr:objectMap [
+            rr:termType rr:IRI;
+            rr:template "http://esipfed.org/geotriples/GRanD_dams_v1_1/Geometry/{`gid`}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_USE_PCON;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`USE_PCON`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_COMMENTS;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`COMMENTS`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_USE_OTHR;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`USE_OTHR`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_QUALITY;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`QUALITY`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_LONG_DD;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`LONG_DD`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_DOR_PC;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`DOR_PC`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_ALT_YEAR;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rr:column "`ALT_YEAR`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_AREA_MIN;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`AREA_MIN`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_RES_NAME;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`RES_NAME`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_CATCH_SKM;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rr:column "`CATCH_SKM`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_NEAR_CITY;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`NEAR_CITY`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_ALT_HGT_M;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rr:column "`ALT_HGT_M`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_CAP_REP;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`CAP_REP`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_DAM_NAME;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`DAM_NAME`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_USE_IRRI;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`USE_IRRI`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_SEC_ADMIN;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`SEC_ADMIN`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_AREA_SKM;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`AREA_SKM`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_CATCH_REP;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rr:column "`CATCH_REP`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_DAM_LEN_M;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rr:column "`DAM_LEN_M`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_YEAR;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rr:column "`YEAR`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_LAT_DD;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`LAT_DD`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_COUNTRY;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`COUNTRY`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_AREA_POLY;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`AREA_POLY`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_DIS_AVG_LS;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rr:column "`DIS_AVG_LS`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_MULTI_DAMS;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`MULTI_DAMS`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_ALT_RIVER;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`ALT_RIVER`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_USE_FCON;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`USE_FCON`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_USE_NAVI;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`USE_NAVI`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_URL;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`URL`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_USE_FISH;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`USE_FISH`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_EDITOR;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`EDITOR`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_USE_LIVE;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`USE_LIVE`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_MAIN_USE;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`MAIN_USE`";
+        ];
+    ];
+    .

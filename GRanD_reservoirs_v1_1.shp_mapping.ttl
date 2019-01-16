@@ -1,0 +1,125 @@
+@prefix geof: <http://www.opengis.net/def/function/geosparql/>.
+@prefix map: <#>.
+@prefix ogc: <http://www.opengis.net/ont/geosparql#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rrx: <http://www.w3.org/ns/r2rml-ext#>.
+@prefix rrxf: <http://www.w3.org/ns/r2rml-ext/functions/def/>.
+@prefix strdf: <http://strdf.di.uoa.gr/ontology#>.
+@prefix vocab: <ontology#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+map:GRanD_reservoirs_v1_1_geometry
+    rr:logicalTable [ rr:tableName "`GRanD_reservoirs_v1_1`"; ];
+    rr:subjectMap [ rr:class ogc:Geometry; rr:template "http://esipfed.org/geotriples/GRanD_reservoirs_v1_1/Geometry/{`gid`}"; ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:isEmpty;
+        rr:objectMap [
+            rr:datatype xsd:boolean;
+            rrx:function rrxf:isEmpty;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:is3D;
+        rr:objectMap [
+            rr:datatype xsd:boolean;
+            rrx:function rrxf:is3D;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:spatialDimension;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rrx:function rrxf:spatialDimension;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:asWKT;
+        rr:objectMap [
+            rr:datatype ogc:wktLiteral;
+            rrx:function rrxf:asWKT;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:dimension;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rrx:function rrxf:dimension;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:isSimple;
+        rr:objectMap [
+            rr:datatype xsd:boolean;
+            rrx:function rrxf:isSimple;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:coordinateDimension;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rrx:function rrxf:coordinateDimension;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    .
+map:GRanD_reservoirs_v1_1
+    rr:logicalTable [ rr:tableName "`GRanD_reservoirs_v1_1`"; ];
+    rr:subjectMap [ rr:class vocab:GRanD_reservoirs_v1_1; rr:template "http://esipfed.org/geotriples/GRanD_reservoirs_v1_1/id/{`gid`}"; ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:hasGeometry;
+        rr:objectMap [
+            rr:termType rr:IRI;
+            rr:template "http://esipfed.org/geotriples/GRanD_reservoirs_v1_1/Geometry/{`gid`}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_GRAND_ID;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rr:column "`GRAND_ID`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_AREA_SKM;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`AREA_SKM`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_POLY_SRC;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`POLY_SRC`";
+        ];
+    ];
+    .
