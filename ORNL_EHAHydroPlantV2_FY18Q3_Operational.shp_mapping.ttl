@@ -1,0 +1,265 @@
+@prefix geof: <http://www.opengis.net/def/function/geosparql/>.
+@prefix map: <#>.
+@prefix ogc: <http://www.opengis.net/ont/geosparql#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rrx: <http://www.w3.org/ns/r2rml-ext#>.
+@prefix rrxf: <http://www.w3.org/ns/r2rml-ext/functions/def/>.
+@prefix strdf: <http://strdf.di.uoa.gr/ontology#>.
+@prefix vocab: <ontology#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+map:ORNL_EHAHydroPlantV2_FY18Q3_Operational_geometry
+    rr:logicalTable [ rr:tableName "`ORNL_EHAHydroPlantV2_FY18Q3_Operational`"; ];
+    rr:subjectMap [ rr:class ogc:Geometry; rr:template "http://cor.esipfed.org/geotriples/ORNL_EHAHydroPlantV2_FY18Q3_Operational/ORNL_EHAHydroPlantV2_FY18Q3_Operational/Geometry/{`gid`}"; ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:is3D;
+        rr:objectMap [
+            rr:datatype xsd:boolean;
+            rrx:function rrxf:is3D;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:isEmpty;
+        rr:objectMap [
+            rr:datatype xsd:boolean;
+            rrx:function rrxf:isEmpty;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:dimension;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rrx:function rrxf:dimension;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:asWKT;
+        rr:objectMap [
+            rr:datatype ogc:wktLiteral;
+            rrx:function rrxf:asWKT;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:spatialDimension;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rrx:function rrxf:spatialDimension;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:coordinateDimension;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rrx:function rrxf:coordinateDimension;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:isSimple;
+        rr:objectMap [
+            rr:datatype xsd:boolean;
+            rrx:function rrxf:isSimple;
+            rrx:argumentMap 
+            (
+                 [ rr:column "`the_geom`"; ]
+            )
+        ];
+    ];
+    .
+map:ORNL_EHAHydroPlantV2_FY18Q3_Operational
+    rr:logicalTable [ rr:tableName "`ORNL_EHAHydroPlantV2_FY18Q3_Operational`"; ];
+    rr:subjectMap [ rr:class vocab:ORNL_EHAHydroPlantV2_FY18Q3_Operational; rr:template "http://cor.esipfed.org/geotriples/ORNL_EHAHydroPlantV2_FY18Q3_Operational/ORNL_EHAHydroPlantV2_FY18Q3_Operational/id/{`gid`}"; ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_PS_MWh;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`PS_MWh`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_FcDocket;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`FcDocket`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_PS_MW;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`PS_MW`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ogc:hasGeometry;
+        rr:objectMap [
+            rr:termType rr:IRI;
+            rr:template "http://cor.esipfed.org/geotriples/ORNL_EHAHydroPlantV2_FY18Q3_Operational/ORNL_EHAHydroPlantV2_FY18Q3_Operational/Geometry/{`gid`}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_PtName;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`PtName`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_FcExpire;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`FcExpire`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_EHA_PtID;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`EHA_PtID`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_PS_Pf;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`PS_Pf`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_FcIssue;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`FcIssue`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_EIA_PtID;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`EIA_PtID`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_HY_MW;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`HY_MW`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_lon;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`lon`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_NID_ID1;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`NID_ID1`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_Pt_Mode;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`Pt_Mode`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_lat;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`lat`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_Pt_OnYr;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rr:column "`Pt_OnYr`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_HY_Pf;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`HY_Pf`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_EHA_Type;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`EHA_Type`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_State;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`State`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_HY_MWh;
+        rr:objectMap [
+            rr:datatype xsd:double;
+            rr:column "`HY_MWh`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_EHA_Own;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`EHA_Own`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_HUC_8;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`HUC_8`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_HMR_Stat;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rr:column "`HMR_Stat`";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:has_N_Unit;
+        rr:objectMap [
+            rr:datatype xsd:integer;
+            rr:column "`N_Unit`";
+        ];
+    ];
+    .
